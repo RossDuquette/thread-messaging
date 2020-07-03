@@ -1,0 +1,13 @@
+#ifndef MODULES_H_
+#define MODULES_H_
+
+enum ModuleID {
+    MODULE_STDOUT,
+    MODULE_CONSUMER,
+    MODULE_CONSUMER_TRY,
+    MODULE_PRODUCER,
+    MODULE_PRODUCER2,
+    NUM_MODULES
+};
+
+#endif

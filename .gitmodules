@@ -1,0 +1,3 @@
+[submodule "libthread-msg"]
+	path = thread-msg
+	url = git@github.com:RossDuquette/libthread-msg.git
