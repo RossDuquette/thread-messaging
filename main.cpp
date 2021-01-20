@@ -4,6 +4,8 @@
 
 #include "consumer.h"
 #include "consumer_try.h"
+#include "latency-test.h"
+#include "latency-test-echo.h"
 #include "modules.h"
 #include "producer.h"
 #include "stdout.h"
@@ -27,10 +29,12 @@ int main()
 
     signal(SIGINT, signal_handler);
 
-    modules[num_modules++] = new Consumer(MODULE_CONSUMER);
-    modules[num_modules++] = new Consumer_try(MODULE_CONSUMER_TRY);
-    modules[num_modules++] = new Producer(MODULE_PRODUCER);
-    modules[num_modules++] = new Producer(MODULE_PRODUCER2);
+    //modules[num_modules++] = new Consumer(MODULE_CONSUMER);
+    //modules[num_modules++] = new Consumer_try(MODULE_CONSUMER_TRY);
+    //modules[num_modules++] = new Producer(MODULE_PRODUCER);
+    //modules[num_modules++] = new Producer(MODULE_PRODUCER2);
+    modules[num_modules++] = new LatencyTest(MODULE_LATENCY_TEST);
+    modules[num_modules++] = new LatencyTestEcho(MODULE_LATENCY_TEST_ECHO);
     modules[num_modules++] = new StdOut(MODULE_STDOUT);
 
     for (int mod = 0; mod < num_modules; mod++) {
